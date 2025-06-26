@@ -18,13 +18,11 @@ public class TaskController {
     @Autowired
     private TaskService taskService;
 
-    // ✅ Get all tasks → /task/all
     @GetMapping("/all")
     public List<Task> getAllTasks() {
         return taskService.getAllTasks();
     }
 
-    // ✅ Get task by ID → /task/view/{id}
     @GetMapping("/view/{id}")
     public ResponseEntity<Task> getTaskById(@PathVariable Long id) {
         Optional<Task> task = taskService.getTaskById(id);
@@ -32,14 +30,12 @@ public class TaskController {
                    .orElse(ResponseEntity.notFound().build());
     }
 
-    // ✅ Add new task → /task/add
     @PostMapping("/add")
     public ResponseEntity<Task> createTask(@RequestBody Task task) {
         Task savedTask = taskService.createTask(task);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedTask);
     }
 
-    // ✅ Update task → /task/update/{id}
     @PutMapping("/update/{id}")
     public ResponseEntity<Task> updateTask(@PathVariable Long id, @RequestBody Task task) {
         Optional<Task> updated = taskService.updateTask(id, task);
@@ -47,7 +43,6 @@ public class TaskController {
                       .orElse(ResponseEntity.notFound().build());
     }
 
-    // ✅ Delete task → /task/delete/{id}
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
         boolean deleted = taskService.deleteTask(id);
