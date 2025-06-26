@@ -1,0 +1,26 @@
+working Url
+
+
+POST http://localhost:1423/auth/register
+
+POST http://localhost:1423/auth/login
+
+{
+  "username": "vithu",
+  "password": "vithu"
+}
+{
+  "username": "dhanu",
+  "password": "dhanu"
+}
+
+GET http://localhost:1423/task/all
+
+GET http://localhost:1423/task/view/1
+
+POST http://localhost:1423/task/add
+
+PUT http://localhost:1423/task/update/1
+
+DELETE http://localhost:1423/task/delete/1
+
