@@ -28,7 +28,7 @@ public class UserController {
     @Autowired
     private JwtService jwtService;
 
-    // ✅ Register user
+ 
     @PostMapping("/register")
     public String registerUser(@RequestBody User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
@@ -36,7 +36,6 @@ public class UserController {
         return "User registered successfully!";
     }
 
-    // ✅ Login and generate token
     @PostMapping("/login")
     public String login(@RequestBody AuthRequest authRequest) {
         authManager.authenticate(
