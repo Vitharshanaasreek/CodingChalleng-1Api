@@ -1,0 +1,26 @@
+<div class="view-task-container">
+  <h2 class="title">📋 All Tasks</h2>
+
+  <div class="search-bar">
+    <input
+      type="text"
+      placeholder="Search by title..."
+      [(ngModel)]="searchText"
+      (input)="onSearch()"
+    />
+  </div>
+
+  <div *ngIf="filteredTasks.length > 0; else noTasks" class="task-list">
+    <div class="task-card" *ngFor="let task of filteredTasks">
+      <h3>{{ task.title }}</h3>
+      <p><strong>Description:</strong> {{ task.description }}</p>
+      <p><strong>Due Date:</strong> {{ task.dueDate | date: 'mediumDate' }}</p>
+      <p><strong>Priority:</strong> {{ task.priority }}</p>
+      <p><strong>Status:</strong> {{ task.status }}</p>
+    </div>
+  </div>
+
+  <ng-template #noTasks>
+    <p class="no-tasks-msg">🚫 No tasks found.</p>
+  </ng-template>
+</div>

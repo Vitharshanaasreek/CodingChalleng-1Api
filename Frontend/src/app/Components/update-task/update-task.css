@@ -1,0 +1,99 @@
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: linear-gradient(to bottom right, #fff4e9, #ffd1a8);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(93, 58, 0, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #5d3a00;
+}
+
+h2, h4 {
+  color: #5d3a00;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.task-list {
+  margin-bottom: 1.5rem;
+}
+
+.list-group {
+  padding: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.list-group-item {
+  padding: 0.75rem 1rem;
+  background-color: #fffaf7;
+  border: 1px solid #ffd1a8;
+  transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+  background-color: #ffe1c4;
+}
+
+.list-group-item.active {
+  background-color: #f6a26b;
+  color: white;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: #7a4f00;
+}
+
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #f6a26b;
+  border-radius: 8px;
+  background-color: #fffaf7;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #f39748;
+  outline: none;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+button[type="submit"] {
+  background-color: #e0894d;
+  color: white;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #c96c29;
+}
+
+.alert {
+  text-align: center;
+  font-weight: 600;
+}

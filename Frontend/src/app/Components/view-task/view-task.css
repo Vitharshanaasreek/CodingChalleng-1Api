@@ -1,0 +1,68 @@
+.view-task-container {
+  background: linear-gradient(to right, #fff0e6, #fde8d4);
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+
+.title {
+  text-align: center;
+  color: #5d3a00;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-bar {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.search-bar input {
+  width: 60%;
+  padding: 10px;
+  border: 2px solid #f6a26b;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.task-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.task-card {
+  background-color: #f6a26b;
+  color: white;
+  padding: 1.2rem;
+  border-radius: 12px;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(93, 58, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-5px);
+}
+
+.task-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.3rem;
+}
+
+.task-card p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+}
+
+.no-tasks-msg {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #5d3a00;
+  margin-top: 2rem;
+}

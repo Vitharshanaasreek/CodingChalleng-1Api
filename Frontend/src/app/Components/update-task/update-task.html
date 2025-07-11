@@ -1,0 +1,53 @@
+
+<div class="container">
+  <h2>Update Task</h2>
+
+  <div class="task-list">
+    <h4>Select a Task:(On selecting a task you can Update)</h4>
+    <ul class="list-group">
+      <li
+        *ngFor="let task of tasks"
+        class="list-group-item"
+        (click)="onSelect(task)"
+        [class.active]="selectedTask?.id === task.id"
+        style="cursor: pointer;"
+      >
+        {{ task.title }} - <em>{{ task.status }}</em>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="selectedTask" class="mt-4">
+    <h4>Update Selected Task</h4>
+    <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+      <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" formControlName="description"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Due Date</label>
+        <input type="date" class="form-control" formControlName="dueDate" />
+      </div>
+
+      <div class="form-group">
+        <label>Priority</label>
+        <select class="form-control" formControlName="priority">
+          <option *ngFor="let p of priorities" [value]="p">{{ p }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Status</label>
+        <select class="form-control" formControlName="status">
+          <option *ngFor="let s of statuses" [value]="s">{{ s }}</option>
+        </select>
+      </div>
+
+      <button class="btn btn-success mt-2" type="submit">Update Task</button>
+    </form>
+  </div>
+
+  <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+</div>
